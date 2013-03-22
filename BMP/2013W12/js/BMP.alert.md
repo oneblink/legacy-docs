@@ -20,7 +20,10 @@ This method was designed with inspiration from the browser built-in [alert](http
 ### Example
 
 ```
-BMP.alert('something went wrong!').then(function() {
+BMP.alert('something went wrong!', {
+  title: 'error!',
+  ok: 'oh well'
+}).then(function() {
   // TODO: statements in here only run _after_ the user presses OK
 });
 ```
@@ -42,7 +45,11 @@ This method was designed with inspiration from the browser built-in [alert](http
 ### Example
 
 ```
-BMP.confirm('are you really sure?').then(function(ok) {
+BMP.confirm('are you really sure?', {
+  title: 'just one thing...',
+  ok: 'yes',
+  cancel: 'no'
+}).then(function(ok) {
   if (ok) {
     // TODO: the user pressed OK
   } else {
