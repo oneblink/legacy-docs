@@ -104,7 +104,7 @@ $formList = array_keys($definitions);
  *  (
  *      [0] => 0
  *      [1] => Person
- *      [2] => subform
+ *      [2] => item
  *  )
  */
 
