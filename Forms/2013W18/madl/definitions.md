@@ -27,12 +27,85 @@ Assuming that your parent form is named "Person":
 $definitions[0] === $definitions['Person']; // evaluates to true
 ```
 
+## definition structure
+
+```
+$definitions[0]['_elements'] = Array
+  (
+      [0] => Array
+          (
+              [fieldName] => name
+              [type] => textbox
+              [label] => Name
+          )
+  
+      [1] => Array
+          (
+              [fieldName] => currentLocation
+              [type] => location
+              [label] => Current Location
+          )
+          
+      [2] => Array
+          (
+              [fieldName] => photo
+              [type] => camera
+              [label] => Photo
+          )
+  
+      [3] => Array
+          (
+              [fieldName] => hobbies
+              [type] => checkboxes
+              [label] => Hobbies
+              [labelPlacement] => default
+              [labelStyle] => Plain
+              [options] => Cricket
+                          Chess
+                          Golf
+                          Baseball
+          )
+          
+      [4] => Array
+          (
+              [fieldName] => itemlist
+              [type] => sub_form
+              [subform] => item
+          )    
+  )
+```
+
+
 ## More Examples
 
 ### Example: retrieve array of field names
 
-_under construction_
+```
+$fields = $definitions['Person']['_elements']; 
+
+[OR]
+
+$fields = $definitions[0]['_elements']; 
+```
 
 ### Example: working with sub-forms
 
-_under construction_
+for the given definition structure:
+
+```
+$subformField = $definitions['Person']['_elements'][4];
+$subform = $definitions[$subformField['subform']]; //field (type='subform') has subform name in 'subform' attribute
+$subformFieldList = $subform['_elements']; 
+
+$formList = array_keys($definitions); 
+/**
+ *  Will return: 
+ *  Array
+ *  (
+ *      [0] => 0
+ *      [1] => Person
+ *      [2] => subform
+ *  )
+ */
+
+```
