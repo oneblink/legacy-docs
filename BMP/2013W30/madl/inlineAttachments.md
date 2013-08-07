@@ -15,12 +15,12 @@ $t->AddInlineStringAttachment($string, $name, $encoding = 'base64', $type = 'app
     $from ="****YOUR_EMAIL****"; 
     $to = "****RECIPIENT_EMAIL****";
     $subject = "Inline Attachment Demo";
-    $body = "In line string attachment is : <img src='cid:BlinkLogo.pdf'>";
+    $body = "In line string attachment is : <img src='cid:BlinkLogo.png'>";
 
     $content = file_get_contents("http://blinkmobile.com.au/images/blinkLogo.png"); 
     //or base64 decoded string
     
-    $t->AddInlineStringAttachment($content, "BlinkLogo.pdf");
+    $t->AddInlineStringAttachment($content, "BlinkLogo.png");
 
 	$sent = $t->email($to, $subject, $body, $from);
 
