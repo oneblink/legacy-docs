@@ -61,6 +61,8 @@ This is based on the configuration of the current answerSpace, with the most use
 - **styleSheets_html**: single string containing CDN-corrected HTML for CSS to include, with BIC stylesheets first, followed by external CSS from the answerSpace Manager
 - **scripts_html**: as above but for JavaScript, with BIC scripts first, followed by external JavaScript from the answerSpace Manager
 - **styleSheet**: single string containing the CSS rules from the answerSpace Manager
+- **appCache**: URL string for the AppCache manifest, but only when offlineMode is enabled
+- **appCachePermalink**: as above, but available regardless of offlineMode
 
 ### BIC
 
